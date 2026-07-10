@@ -1,0 +1,190 @@
+---
+import jatesLabsLogo from '../assets/logo.svg';
+---
+
+<header class="navbar-header">
+  <div class="navbar-container">
+    <a href="/" class="navbar-brand">
+      <img src={jatesLabsLogo.src} alt="JatesLabs Logo" width="50" height="50" />
+      <h1>JatesLabs</h1>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span class="hamburger-bar"></span>
+      <span class="hamburger-bar"></span>
+      <span class="hamburger-bar"></span>
+    </button>
+
+    <div class="navbar-collapse" id="navbarCollapse">
+      <nav class="navbar-links">
+        <a href="about" class="nav-link">About</a>
+        <span class="nav-divider">|</span>
+        <a href="#skills" class="nav-link">Skills</a>
+        <span class="nav-divider">|</span>
+        <a href="#contact" class="nav-link">Contact Me</a>
+      </nav>
+
+      <div class="navbar-actions">
+        <a href="#projects" class="nav-link target-btn">View My Projects</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<style>
+  /* --- Layout & Reset --- */
+  .navbar-header {
+    width: 100%;
+    background-color: #ffffff;
+    border-bottom: 1px solid #eaeaea;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* --- Brand / Logo --- */
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: #111111;
+  }
+  
+  .navbar-brand h2 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+
+  /* --- Desktop Layout Container --- */
+  .navbar-collapse {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 3rem; /* Spacing out from the logo */
+  }
+
+  .navbar-links {
+    display: flex;
+    gap: 2rem;
+    margin: 0 auto; /* Magically centers the links between the logo and button */
+  }
+
+  .navbar-actions {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-link {
+    text-decoration: none;
+    color: #666666;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+
+  .nav-link:hover {
+    color: #009bff;
+  }
+
+  .target-btn {
+    background-color: #009bff;
+    color: #ffffff !important;
+    padding: 0.5rem 1.25rem;
+    border-radius: 6px;
+  }
+
+  .target-btn:hover {
+    background-color: #007acc;
+  }
+
+  /* --- Hamburger Icon --- */
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .hamburger-bar {
+    width: 100%;
+    height: 2px;
+    background-color: #111111;
+    transition: all 0.3s ease;
+  }
+
+  /* --- Mobile Responsive Styles --- */
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: flex;
+    }
+
+    .nav-divider {
+      display: none;
+    }
+
+    .navbar-collapse {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: #ffffff;
+      padding: 1.5rem;
+      border-bottom: 1px solid #eaeaea;
+      gap: 1.5rem;
+      margin-left: 0;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .navbar-collapse.is-active {
+      display: flex;
+    }
+
+    .navbar-links {
+      flex-direction: column;
+      width: 100%;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .menu-toggle.is-active .hamburger-bar:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+    .menu-toggle.is-active .hamburger-bar:nth-child(2) {
+      opacity: 0;
+    }
+    .menu-toggle.is-active .hamburger-bar:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+  }
+</style>
+
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const navbarCollapse = document.getElementById('navbarCollapse');
+
+  if (menuToggle && navbarCollapse) {
+    menuToggle.addEventListener('click', () => {
+      const isActive = menuToggle.classList.toggle('is-active');
+      navbarCollapse.classList.toggle('is-active');
+      menuToggle.setAttribute('aria-expanded', String(isActive));
+    });
+  }
+</script>
