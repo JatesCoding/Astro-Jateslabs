@@ -1,15 +1,29 @@
 ---
-import jatesLabsLogo from '../assets/logo.svg';
+import jatesLabsLogo from "../assets/logo.svg";
 ---
 
 <header class="navbar-header">
   <div class="navbar-container">
     <a href="/" class="navbar-brand">
-      <img src={jatesLabsLogo.src} alt="JatesLabs Logo" width="50" height="50" />
-      <h1>JatesLabs</h1>
+      <img
+        src={jatesLabsLogo.src}
+        alt="JatesLabs Logo"
+        width="50"
+        height="50"
+      />
+      <h1>
+        <span class="brand-jates">Jates</span><span class="brand-labs"
+          >Labs</span
+        >
+      </h1>
     </a>
 
-    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
+    <button
+      class="menu-toggle"
+      id="menuToggle"
+      aria-label="Toggle navigation"
+      aria-expanded="false"
+    >
       <span class="hamburger-bar"></span>
       <span class="hamburger-bar"></span>
       <span class="hamburger-bar"></span>
@@ -17,7 +31,7 @@ import jatesLabsLogo from '../assets/logo.svg';
 
     <div class="navbar-collapse" id="navbarCollapse">
       <nav class="navbar-links">
-        <a href="about" class="nav-link">About</a>
+        <a href="#about" class="nav-link">About</a>
         <span class="nav-divider">|</span>
         <a href="#skills" class="nav-link">Skills</a>
         <span class="nav-divider">|</span>
@@ -32,6 +46,14 @@ import jatesLabsLogo from '../assets/logo.svg';
 </header>
 
 <style>
+  .brand-jates {
+    color: #009bff;
+  }
+
+  .brand-labs {
+    color: #535353;
+  }
+
   /* --- Layout & Reset --- */
   .navbar-header {
     width: 100%;
@@ -59,7 +81,7 @@ import jatesLabsLogo from '../assets/logo.svg';
     text-decoration: none;
     color: #111111;
   }
-  
+
   .navbar-brand h2 {
     margin: 0;
     font-size: 1.25rem;
@@ -177,14 +199,14 @@ import jatesLabsLogo from '../assets/logo.svg';
 </style>
 
 <script>
-  const menuToggle = document.getElementById('menuToggle');
-  const navbarCollapse = document.getElementById('navbarCollapse');
+  const menuToggle = document.getElementById("menuToggle");
+  const navbarCollapse = document.getElementById("navbarCollapse");
 
   if (menuToggle && navbarCollapse) {
-    menuToggle.addEventListener('click', () => {
-      const isActive = menuToggle.classList.toggle('is-active');
-      navbarCollapse.classList.toggle('is-active');
-      menuToggle.setAttribute('aria-expanded', String(isActive));
+    menuToggle.addEventListener("click", () => {
+      const isActive = menuToggle.classList.toggle("is-active");
+      navbarCollapse.classList.toggle("is-active");
+      menuToggle.setAttribute("aria-expanded", String(isActive));
     });
   }
 </script>
