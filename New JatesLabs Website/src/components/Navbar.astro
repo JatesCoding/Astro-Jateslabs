@@ -2,201 +2,75 @@
 import jatesLabsLogo from "../assets/logo.svg";
 ---
 
-<header class="navbar-header">
-  <div class="navbar-container">
-    <a href="/" class="navbar-brand">
+<header class="sticky top-0 z-50 w-full border-b border-gray-200 bg-white">
+  <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
+    <a href="/" class="flex items-center gap-2 text-gray-900 no-underline">
       <img
         src={jatesLabsLogo.src}
         alt="JatesLabs Logo"
         width="50"
         height="50"
       />
-      <h1>
-        <span class="brand-jates">Jates</span><span class="brand-labs"
+      <h1 class="m-0 text-3xl">
+        <span class="text-blue-400">Jates</span><span class="text-gray-500"
           >Labs</span
         >
       </h1>
     </a>
 
     <button
-      class="menu-toggle"
+      class="group hidden h-4.5 w-6 cursor-pointer flex-col justify-between border-none bg-transparent p-0 max-md:flex"
       id="menuToggle"
+      data-active="false"
       aria-label="Toggle navigation"
       aria-expanded="false"
     >
-      <span class="hamburger-bar"></span>
-      <span class="hamburger-bar"></span>
-      <span class="hamburger-bar"></span>
+      <span
+        class="h-0.5 w-full bg-gray-900 transition-all duration-300 group-data-[active=true]:translate-y-2 group-data-[active=true]:rotate-45"
+      ></span>
+      <span
+        class="h-0.5 w-full bg-gray-900 transition-all duration-300 group-data-[active=true]:opacity-0"
+      ></span>
+      <span
+        class="h-0.5 w-full bg-gray-900 transition-all duration-300 group-data-[active=true]:-translate-y-2 group-data-[active=true]:-rotate-45"
+      ></span>
     </button>
 
-    <div class="navbar-collapse" id="navbarCollapse">
-      <nav class="navbar-links">
-        <a href="#about" class="nav-link">About</a>
-        <span class="nav-divider">|</span>
-        <a href="#skills" class="nav-link">Skills</a>
-        <span class="nav-divider">|</span>
-        <a href="#contact" class="nav-link">Contact Me</a>
+    <div
+      id="navbarCollapse"
+      data-active="false"
+      class="flex grow justify-between items-center md:ml-12 max-md:absolute max-md:top-full max-md:left-0 max-md:hidden max-md:w-full max-md:flex-col max-md:gap-6 max-md:border-b max-md:border-gray-200 max-md:bg-white max-md:shadow-md max-md:data-[active=true]:flex"
+    >
+      <nav
+        class="mx-auto flex gap-8 max-md:w-full max-md:flex-col max-md:gap-1"
+      >
+        <a
+          href="#about"
+          class="text-gray-600 transition-colors max-md:p-3 hover:text-blue-500 max-md:border-b-2"
+          >About</a
+        >
+        <span class="text-gray-400 max-md:hidden">|</span>
+        <a
+          href="#skills"
+          class="text-gray-600 transition-colors max-md:p-3 hover:text-blue-500 max-md:border-b-2"
+          >Skills</a
+        >
+        <span class="text-gray-400 max-md:hidden">|</span>
+        <a
+          href="#contact"
+          class="text-gray-600 transition-colors max-md:p-3 hover:text-blue-500 max-md:border-b-2"
+          >Contact Me</a
+        >
       </nav>
 
-      <div class="navbar-actions">
-        <a href="#projects" class="nav-link target-btn">View My Projects</a>
-      </div>
+      <a
+        href="#projects"
+        class="shadow-md rounded-full bg-blue-400 px-5 py-2 font-medium text-white transition-colors border-blue-400 border-2 hover:text-gray-500 hover:bg-white hover:border-2"
+        >View My Projects</a
+      >
     </div>
   </div>
 </header>
-
-<style>
-  .brand-jates {
-    color: #009bff;
-  }
-
-  .brand-labs {
-    color: #535353;
-  }
-
-  /* --- Layout & Reset --- */
-  .navbar-header {
-    width: 100%;
-    background-color: #ffffff;
-    border-bottom: 1px solid #eaeaea;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-  }
-
-  .navbar-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0.1rem 1.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  /* --- Brand / Logo --- */
-  .navbar-brand {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    text-decoration: none;
-    color: #111111;
-  }
-
-  .navbar-brand h2 {
-    margin: 0;
-    font-size: 1.25rem;
-    font-weight: 700;
-  }
-
-  /* --- Desktop Layout Container --- */
-  .navbar-collapse {
-    display: flex;
-    flex-grow: 1;
-    justify-content: space-between;
-    align-items: center;
-    margin-left: 3rem; /* Spacing out from the logo */
-  }
-
-  .navbar-links {
-    display: flex;
-    gap: 2rem;
-    margin: 0 auto; /* Magically centers the links between the logo and button */
-  }
-
-  .navbar-actions {
-    display: flex;
-    align-items: center;
-  }
-
-  .nav-link {
-    text-decoration: none;
-    color: #666666;
-    font-weight: 500;
-    transition: color 0.2s ease;
-  }
-
-  .nav-link:hover {
-    color: #009bff;
-  }
-
-  .target-btn {
-    background-color: #009bff;
-    color: #ffffff !important;
-    padding: 0.5rem 1.25rem;
-    border-radius: 6px;
-  }
-
-  .target-btn:hover {
-    background-color: #007acc;
-  }
-
-  /* --- Hamburger Icon --- */
-  .menu-toggle {
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 24px;
-    height: 18px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-  }
-
-  .hamburger-bar {
-    width: 100%;
-    height: 2px;
-    background-color: #111111;
-    transition: all 0.3s ease;
-  }
-
-  /* --- Mobile Responsive Styles --- */
-  @media (max-width: 768px) {
-    .menu-toggle {
-      display: flex;
-    }
-
-    .nav-divider {
-      display: none;
-    }
-
-    .navbar-collapse {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      width: 100%;
-      background-color: #ffffff;
-      padding: 1.5rem;
-      border-bottom: 1px solid #eaeaea;
-      gap: 1.5rem;
-      margin-left: 0;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    }
-
-    .navbar-collapse.is-active {
-      display: flex;
-    }
-
-    .navbar-links {
-      flex-direction: column;
-      width: 100%;
-      gap: 1.5rem;
-      align-items: center;
-    }
-
-    .menu-toggle.is-active .hamburger-bar:nth-child(1) {
-      transform: translateY(8px) rotate(45deg);
-    }
-    .menu-toggle.is-active .hamburger-bar:nth-child(2) {
-      opacity: 0;
-    }
-    .menu-toggle.is-active .hamburger-bar:nth-child(3) {
-      transform: translateY(-8px) rotate(-45deg);
-    }
-  }
-</style>
 
 <script>
   const menuToggle = document.getElementById("menuToggle");
@@ -204,8 +78,9 @@ import jatesLabsLogo from "../assets/logo.svg";
 
   if (menuToggle && navbarCollapse) {
     menuToggle.addEventListener("click", () => {
-      const isActive = menuToggle.classList.toggle("is-active");
-      navbarCollapse.classList.toggle("is-active");
+      const isActive = menuToggle.getAttribute("data-active") !== "true";
+      menuToggle.setAttribute("data-active", String(isActive));
+      navbarCollapse.setAttribute("data-active", String(isActive));
       menuToggle.setAttribute("aria-expanded", String(isActive));
     });
   }
