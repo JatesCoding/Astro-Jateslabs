@@ -1,5 +1,16 @@
 @import "tailwindcss";
 
+/* ---------------------------------------------------------------------------
+   Design tokens
+   ------------------------------------------------------------------------- */
+@theme {
+  /* Applied globally by Tailwind's preflight (html font-family) */
+  --font-sans: "Cal Sans", sans-serif;
+}
+
+/* ---------------------------------------------------------------------------
+   Base element styles
+   ------------------------------------------------------------------------- */
 @layer base {
   html,
   body {
@@ -8,49 +19,55 @@
     height: 100%;
   }
 
-  h1 {
-    font-family: "Cal Sans", sans-serif;
+  :is(h1, h2, h3, h4, h5, h6) {
+    font-family: var(--font-sans);
     font-weight: 400;
     font-style: normal;
   }
+
   h1.massive {
     font-size: 4rem;
   }
-  h2 {
-    font-family: "Cal Sans", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-  }
-  h3 {
-    font-family: "Cal Sans", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-  }
-  h4 {
-    font-family: "Cal Sans", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-  }
-  h5 {
-    font-family: "Cal Sans", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-  }
-  h6 {
-    font-family: "Cal Sans", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-  }
-  a {
+
+  :is(a, p) {
     text-decoration: none;
     color: inherit;
-    font-family: "Cal Sans", sans-serif;
+    font-family: var(--font-sans);
     font-weight: 400;
   }
-  p {
-    text-decoration: none;
-    color: inherit;
-    font-family: "Cal Sans", sans-serif;
-    font-weight: 400;
+}
+
+/* ---------------------------------------------------------------------------
+   Reusable components
+   ------------------------------------------------------------------------- */
+@layer components {
+  /* Full-width page band with the blue top rule (Hero, Footer, future sections) */
+  .section {
+    @apply w-full bg-white border-t-2 border-blue-400 py-4 px-4 sm:px-10 lg:px-16;
+  }
+
+  /* Centered max-width content column */
+  .container-x {
+    @apply max-w-6xl mx-auto;
+  }
+
+  /* Navbar text link */
+  .nav-link {
+    @apply text-gray-600 transition-colors max-md:p-3 hover:text-blue-500 max-md:border-b-2;
+  }
+
+  /* Navbar separator between text links */
+  .nav-divider {
+    @apply text-gray-400 max-md:hidden;
+  }
+
+  /* Filled rounded call-to-action button */
+  .btn-primary {
+    @apply shadow-md rounded-full bg-blue-400 px-5 py-2 max-md:m-4 font-medium text-white transition-colors border-blue-400 border-2 hover:text-gray-500 hover:bg-white hover:border-2;
+  }
+
+  /* Footer column link */
+  .footer-link {
+    @apply text-gray-400 hover:text-sky-500 text-sm font-medium transition-colors;
   }
 }
