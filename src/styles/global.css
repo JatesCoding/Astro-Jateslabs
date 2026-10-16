@@ -33,19 +33,20 @@
 
   h3 {
     font-size: 1.75rem;
-
+  }
   h4 {
     font-size: 1.5rem;
   }
   h5 {
     font-size: 1.25rem;
   }
-
+  h6 {
     font-size: 1rem;
   }
 
   h1.massive {
-    font-size: 4rem;
+    font-size: 7rem;
+    line-height: 1;
   }
 
   :is(a, p) {

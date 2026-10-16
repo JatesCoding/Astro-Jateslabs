@@ -10,4 +10,4 @@ image:
 tags: ["astro", "blogging", "learning in public"]
 ---
 
-## Hello This is my first post! how is it going?
+Hello This is my first post! how is it going?
