@@ -2,21 +2,22 @@
 import jatesLabsLogo from "../assets/logotext.svg";
 ---
 
-<footer class="section">
+<footer class="section border-t-2 border-blue-400">
   <div
     class="container-x flex flex-col md:flex-row md:items-start justify-between gap-10"
   >
     <!-- Left: Brand & Tagline -->
     <div class="flex flex-col items-start gap-4">
-      <a href="/" class="flex gap-2 items-center">
+      <a href="/" class="brand-logo">
         <img
           src={jatesLabsLogo.src}
           alt="JatesLabs"
           class="h-14 w-auto object-contain"
         />
       </a>
-      <p class="text-base sm:text-lg text-gray-500">
-        <span class="text-blue-400">Your go to</span> IT guy.
+      <p class="subtitle">
+        <span class="text-blue-400">Your go to</span>
+        <span class="text-gray-500"> IT guy.</span>
       </p>
     </div>
 
@@ -26,8 +27,8 @@ import jatesLabsLogo from "../assets/logotext.svg";
     >
       <!-- Main Pages -->
       <div>
-        <h3 class="text-blue-400">Main Pages</h3>
-        <ul class="flex flex-col gap-2.5">
+        <h3 class="footer-heading">Main Pages</h3>
+        <ul class="footer-list">
           <li>
             <a href="/" class="footer-link"> Home </a>
           </li>
@@ -39,8 +40,8 @@ import jatesLabsLogo from "../assets/logotext.svg";
 
       <!-- CMS Pages -->
       <div>
-        <h3 class="text-blue-400">CMS Pages</h3>
-        <ul class="flex flex-col gap-2.5">
+        <h3 class="footer-heading">CMS Pages</h3>
+        <ul class="footer-list">
           <li>
             <a href="/projects" class="footer-link"> Projects </a>
           </li>
@@ -49,8 +50,8 @@ import jatesLabsLogo from "../assets/logotext.svg";
 
       <!-- Follow Me -->
       <div>
-        <h3 class="text-blue-400">Follow Me</h3>
-        <ul class="flex flex-col gap-2.5">
+        <h3 class="footer-heading">Follow Me</h3>
+        <ul class="footer-list">
           <li>
             <a
               href="https://instagram.com"

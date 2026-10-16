@@ -1,0 +1,15 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import Header from "../components/Header.astro";
+
+const { frontmatter } = Astro.props;
+---
+
+<BaseLayout title={`JatesLabs - ${frontmatter.title}`}>
+  <Header title={frontmatter.title} />
+  <article class="section">
+    <div class="container-x">
+      <slot />
+    </div>
+  </article>
+</BaseLayout>
