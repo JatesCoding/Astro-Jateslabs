@@ -7,5 +7,6 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  site: 'https://jatescoding.github.io'
+  site: 'https://jatescoding.github.io',
+  base: '/Astro-Jateslabs/'
 });
