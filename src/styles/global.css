@@ -83,12 +83,12 @@
 
   /* Filled rounded call-to-action button */
   .btn-primary {
-    @apply shadow-md rounded-full bg-blue-400 px-5 py-2 max-md:m-4 font-medium text-white transition-colors border-blue-400 border-2 hover:text-gray-500 hover:bg-white;
+    @apply shadow-md rounded-full bg-blue-500 px-5 py-2 max-md:m-4 font-medium text-white transition-colors border-blue-500 border-2 hover:text-gray-500 hover:bg-white;
   }
 
   /* Footer column heading */
   .footer-heading {
-    @apply text-blue-400;
+    @apply text-blue-500;
   }
 
   /* Footer column link list */
@@ -98,6 +98,6 @@
 
   /* Footer column link */
   .footer-link {
-    @apply text-gray-400 hover:text-sky-500 text-sm font-medium transition-colors;
+    @apply text-gray-400 hover:text-blue-500 text-sm font-medium transition-colors;
   }
 }
